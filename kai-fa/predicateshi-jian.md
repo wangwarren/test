@@ -5,39 +5,39 @@
 配置：
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - After=2019-01-01T00:00:00+08:00[Asia/Shanghai]
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - After=2019-01-01T00:00:00+08:00[Asia/Shanghai]
 ```
 
-上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址[https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。](https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。)
+上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。
 
 配置：
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - Before=2019-01-01T00:00:00+08:00[Asia/Shanghai]  
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - Before=2019-01-01T00:00:00+08:00[Asia/Shanghai]
 ```
 
 1.server:
@@ -130,7 +130,7 @@
 
 使用 curl 测试，命令行输入:
 
-curl\[[http://localhost:8080--cookie"sessionId=test\]\(http://localhost:8080--cookie"sessionId=test](http://localhost:8080--cookie"sessionId=test]%28http://localhost:8080--cookie"sessionId=test)\)"
+curl\[\[[http://localhost:8080--cookie"sessionId=test\]\(http://localhost:8080--cookie"sessionId=test\]\(http://localhost:8080--cookie"sessionId=test\]\(http://localhost:8080--cookie"sessionId=test\)\](http://localhost:8080--cookie"sessionId=test]%28http://localhost:8080--cookie"sessionId=test]%28http://localhost:8080--cookie"sessionId=test]%28http://localhost:8080--cookie"sessionId=test%29\)\)"
 
 则会返回页面代码，如果去掉–cookie "sessionId=test"，后台汇报 404 错误。
 
@@ -166,7 +166,7 @@ curl\[[http://localhost:8080--cookie"sessionId=test\]\(http://localhost:8080--co
 
 使用 curl 测试，命令行输入:
 
-curl\[[http://localhost:8080-H"X-Request-Id:88\]\(http://localhost:8080-H"X-Request-Id:88](http://localhost:8080-H"X-Request-Id:88]%28http://localhost:8080-H"X-Request-Id:88)\)"
+curl\[\[[http://localhost:8080-H"X-Request-Id:88\]\(http://localhost:8080-H"X-Request-Id:88\]\(http://localhost:8080-H"X-Request-Id:88\]\(http://localhost:8080-H"X-Request-Id:88\)\](http://localhost:8080-H"X-Request-Id:88]%28http://localhost:8080-H"X-Request-Id:88]%28http://localhost:8080-H"X-Request-Id:88]%28http://localhost:8080-H"X-Request-Id:88%29\)\)"
 
 则返回页面代码证明匹配成功。将参数-H "X-Request-Id:88"改为-H "X-Request-Id:spring"再次执行时返回404证明没有匹配。
 
@@ -202,9 +202,9 @@ curl\[[http://localhost:8080-H"X-Request-Id:88\]\(http://localhost:8080-H"X-Requ
 
 使用 curl 测试，命令行输入:
 
-1.curl\[[http://localhost:8080-H"Host:www.baidu.com\]\(http://localhost:8080-H"Host:www.baidu.com](http://localhost:8080-H"Host:www.baidu.com]%28http://localhost:8080-H"Host:www.baidu.com)\)"
+1.curl\[\[[http://localhost:8080-H"Host:www.baidu.com\]\(http://localhost:8080-H"Host:www.baidu.com\]\(http://localhost:8080-H"Host:www.baidu.com\]\(http://localhost:8080-H"Host:www.baidu.com\)\](http://localhost:8080-H"Host:www.baidu.com]%28http://localhost:8080-H"Host:www.baidu.com]%28http://localhost:8080-H"Host:www.baidu.com]%28http://localhost:8080-H"Host:www.baidu.com%29\)\)"
 
-2.curl\[[http://localhost:8080-H"Host:md.baidu.com\]\(http://localhost:8080-H"Host:md.baidu.com](http://localhost:8080-H"Host:md.baidu.com]%28http://localhost:8080-H"Host:md.baidu.com)\)"
+2.curl\[\[[http://localhost:8080-H"Host:md.baidu.com\]\(http://localhost:8080-H"Host:md.baidu.com\]\(http://localhost:8080-H"Host:md.baidu.com\]\(http://localhost:8080-H"Host:md.baidu.com\)\](http://localhost:8080-H"Host:md.baidu.com]%28http://localhost:8080-H"Host:md.baidu.com]%28http://localhost:8080-H"Host:md.baidu.com]%28http://localhost:8080-H"Host:md.baidu.com%29\)\)"
 
 经测试以上两种 host 均可匹配到 host\_route 路由，去掉 host 参数则会报 404 错误。
 
