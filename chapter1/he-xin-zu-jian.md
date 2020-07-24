@@ -1,6 +1,6 @@
 ## 1.**流程**
 
-![](file:///C:\Users\THTF\AppData\Local\Temp\ksohtml18868\wps13.jpg)
+![](/assets/图片1.png)
 
 客户端向 Spring Cloud Gateway 发出请求。然后在 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。过滤器之间用虚线分开是因为过滤器可能会在发送代理请求之前（“pre”）或之后（“post”）执行业务逻辑。
 
@@ -62,7 +62,7 @@ Predict决定了请求由哪一个路由处理，而filter在路由处理之前�
 
 #### 2**.2.1 作用**
 
-![](file:///C:\Users\THTF\AppData\Local\Temp\ksohtml18868\wps14.jpg)
+![](/assets/图片2.png)
 
 Spring Cloud Gateway 的 Filter 的生命周期不像 Zuul 的那么丰富，它只有两个：“pre” 和 “post”。
 
@@ -72,13 +72,13 @@ lPOST：这种过滤器在路由到微服务以后执行。这种过滤器可用
 
 利用 GatewayFilter 可以修改请求的 Http 的请求或者响应，或者根据请求或者响应做一些特殊的限制，更多时候我们会利用 GatewayFilter 做一些具体的路由配置。
 
-![](file:///C:\Users\THTF\AppData\Local\Temp\ksohtml18868\wps15.jpg)
+![](/assets/图片3.png)
 
 #### 2**.2.2 生命周期**
 
 Spring Cloud Gateway同zuul类似，有“pre”和“post”两种方式的filter。客户端的请求先经过“pre”类型的filter，然后将请求转发到具体的业务服务，比如上图中的user-service，收到业务服务的响应之后，再经过“post”类型的filter处理，最后返回响应到客户端。
 
-![](file:///C:\Users\THTF\AppData\Local\Temp\ksohtml18868\wps16.jpg)
+![](/assets/图片4.png)
 
 Spring Cloud Gateway 的 Filter 分为两种：GatewayFilter 与 GlobalFilter。GlobalFilter 会应用到所有的路由上，而 GatewayFilter 将应用到单个路由或者一个分组的路由上。
 
