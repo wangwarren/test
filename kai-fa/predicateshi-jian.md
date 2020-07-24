@@ -1,4 +1,6 @@
-##  **1.1 通过时间匹配**
+## 
+
+## **1.1 通过时间匹配**
 
 配置：
 
@@ -20,7 +22,7 @@
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -28,7 +30,7 @@
 
 13.-After=2019-01-01T00:00:00+08:00\[Asia/Shanghai\]
 
-上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。
+上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址[https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。](https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。)
 
 配置：
 
@@ -50,7 +52,7 @@
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -58,7 +60,7 @@
 
 13.-Before=2019-01-01T00:00:00+08:00\[Asia/Shanghai\]
 
-表示在这个时间之前可以进行路由，在这时间之后停止路由，修改完之后重启项目再次访问地址http://localhost:8080，页面会报 404 没有找到地址。
+表示在这个时间之前可以进行路由，在这时间之后停止路由，修改完之后重启项目再次访问地址[http://localhost:8080，页面会报](http://localhost:8080，页面会报) 404 没有找到地址。
 
 配置：
 
@@ -80,7 +82,7 @@
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -112,7 +114,7 @@
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -122,7 +124,7 @@
 
 使用 curl 测试，命令行输入:
 
-curlhttp://localhost:8080--cookie"sessionId=test"
+curl[http://localhost:8080--cookie"sessionId=test](http://localhost:8080--cookie"sessionId=test)"
 
 则会返回页面代码，如果去掉–cookie "sessionId=test"，后台汇报 404 错误。
 
@@ -148,7 +150,7 @@ curlhttp://localhost:8080--cookie"sessionId=test"
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -158,7 +160,7 @@ curlhttp://localhost:8080--cookie"sessionId=test"
 
 使用 curl 测试，命令行输入:
 
-curlhttp://localhost:8080-H"X-Request-Id:88"
+curl[http://localhost:8080-H"X-Request-Id:88](http://localhost:8080-H"X-Request-Id:88)"
 
 则返回页面代码证明匹配成功。将参数-H "X-Request-Id:88"改为-H "X-Request-Id:spring"再次执行时返回404证明没有匹配。
 
@@ -184,7 +186,7 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -194,9 +196,9 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 使用 curl 测试，命令行输入:
 
-1.curlhttp://localhost:8080-H"Host:www.baidu.com"
+1.curl[http://localhost:8080-H"Host:www.baidu.com](http://localhost:8080-H"Host:www.baidu.com)"
 
-2.curlhttp://localhost:8080-H"Host:md.baidu.com"
+2.curl[http://localhost:8080-H"Host:md.baidu.com](http://localhost:8080-H"Host:md.baidu.com)"
 
 经测试以上两种 host 均可匹配到 host\_route 路由，去掉 host 参数则会报 404 错误。
 
@@ -222,7 +224,7 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -234,13 +236,13 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 1.\#curl默认是以GET的方式去请求
 
-2.curlhttp://localhost:8080
+2.curl[http://localhost:8080](http://localhost:8080)
 
 测试返回页面代码，证明匹配到路由，我们再以 POST 的方式请求测试。
 
 1.\#curl默认是以GET的方式去请求
 
-2.curl-XPOSThttp://localhost:8080
+2.curl-XPOST[http://localhost:8080](http://localhost:8080)
 
 返回 404 没有找到，证明没有匹配上路由
 
@@ -266,7 +268,7 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 9.-id:gateway-service
 
-10.uri:http://ityouknow.com
+10.uri:[http://ityouknow.com](http://ityouknow.com)
 
 11.order:0
 
@@ -278,11 +280,11 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 使用 curl 测试，命令行输入:
 
-1.curlhttp://localhost:8080/foo/1
+1.curl[http://localhost:8080/foo/1](http://localhost:8080/foo/1)
 
-2.curlhttp://localhost:8080/foo/xx
+2.curl[http://localhost:8080/foo/xx](http://localhost:8080/foo/xx)
 
-3.curlhttp://localhost:8080/boo/xx
+3.curl[http://localhost:8080/boo/xx](http://localhost:8080/boo/xx)
 
 经过测试第一和第二条命令可以正常获取到页面返回值，最后一个命令报404，证明路由是通过指定路由来匹配。
 
@@ -308,7 +310,7 @@ curlhttp://localhost:8080-H"X-Request-Id:88"
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -344,7 +346,7 @@ curllocalhost:8080?smile=x&id=2
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -382,7 +384,7 @@ curllocalhost:8080?keep=pub
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -395,8 +397,6 @@ curllocalhost:8080?keep=pub
 curllocalhost:8080
 
 如果请求的远程地址是 192.168.1.10，则此路由将匹配。
-
-
 
 ### **1.9 组合使用**
 
@@ -418,7 +418,7 @@ curllocalhost:8080
 
 9.-id:gateway-service
 
-10.uri:https://www.baidu.com
+10.uri:[https://www.baidu.com](https://www.baidu.com)
 
 11.order:0
 
@@ -439,8 +439,6 @@ curllocalhost:8080
 19.-Cookie=chocolate,ch.p
 
 20.-After=2018-01-20T06:06:06+08:00\[Asia/Shanghai\]
-
-
 
 ### **1.10 源码下载**
 
