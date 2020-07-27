@@ -225,839 +225,1936 @@ curl localhost:8081/customer/123
 
 [示例代码-GitHub](https://github.com/forezp/SpringCloudLearning/tree/master/sc-f-gateway-predicate)
 
-  
-@font-face{  
-font-family:"Times New Roman";  
-}  
-  
-@font-face{  
-font-family:"宋体";  
-}  
-  
-@font-face{  
-font-family:"Wingdings";  
-}  
-  
-@font-face{  
-font-family:"Arial";  
-}  
-  
-@font-face{  
-font-family:"黑体";  
-}  
-  
-@font-face{  
-font-family:"Calibri";  
-}  
-  
-@font-face{  
-font-family:"Consolas";  
-}  
-  
-@font-face{  
-font-family:"Segoe UI";  
-}  
-  
-@font-face{  
-font-family:"微软雅黑";  
-}  
-  
-@list l0:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l2:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l3:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l5:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l6:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-p.MsoNormal{  
-mso-style-name:正文;  
-mso-style-parent:"";  
-margin:0pt;  
-margin-bottom:.0001pt;  
-mso-pagination:none;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:10.5000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h2{  
-mso-style-name:"标题 2";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:2;  
-line-height:172%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h3{  
-mso-style-name:"标题 3";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:3;  
-line-height:172%;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h4{  
-mso-style-name:"标题 4";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:14.0000pt;  
-margin-bottom:14.5000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:4;  
-line-height:155%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:14.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-span.10{  
-font-family:'Times New Roman';  
-}  
-  
-span.15{  
-font-family:'Times New Roman';  
-color:rgb\(0,0,255\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-span.16{  
-font-family:'Times New Roman';  
-color:rgb\(128,0,128\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-p.p{  
-mso-style-name:"普通\\(网站\\)";  
-margin-top:5.0000pt;  
-margin-right:0.0000pt;  
-margin-bottom:5.0000pt;  
-margin-left:0.0000pt;  
-mso-margin-top-alt:auto;  
-mso-margin-bottom-alt:auto;  
-mso-pagination:none;  
-text-align:left;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:12.0000pt;  
-}  
-  
-span.msoIns{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:underline;  
-text-underline:single;  
-color:blue;  
-}  
-  
-span.msoDel{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:line-through;  
-color:red;  
-}  
-@page{mso-page-border-surround-header:no;  
-	mso-page-border-surround-footer:no;}@page Section0{  
-}  
+## **3.高级应用**
+
+### **3.1 熔断**
+
+1.Spring Cloud Gateway 也可以利用 Hystrix 的熔断特性，在流量过大时进行服务降级，同样我们还是首先给项目添加上依赖。
+
+1.&lt;dependency&gt;
+
+2.&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+
+3.&lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;
+
+4.&lt;/dependency&gt;
+
+配置示例
+
+1.spring:
+
+2.cloud:
+
+3.gateway:
+
+4.routes:
+
+5.-id:hystrix\_route
+
+6.uri:http://example.org
+
+7.filters:
+
+8.-Hystrix=myCommandName
+
+配置后，gateway 将使用 myCommandName 作为名称生成 HystrixCommand 对象来进行熔断管理。
+
+2.如果想添加熔断后的回调内容，需要在添加一些配置
+
+1.spring:
+
+2.cloud:
+
+3.gateway:
+
+4.routes:
+
+5.-id:hystrix\_route
+
+6.uri:lb://spring-cloud-producer
+
+7.predicates:
+
+8.-Path=/consumingserviceendpoint
+
+9.filters:
+
+10.-name:Hystrix
+
+11.args:
+
+12.name:fallbackcmd
+
+13.fallbackUri:forward:/incaseoffailureusethis
+
+fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的路径，当调用 Hystrix 的 fallback 被调用时，请求将转发到/incaseoffailureuset这个 URI。
+
+#### **源码下载**
+
+[示例代码-Github](https://github.com/meteor1993/SpringCloudLearning/tree/master/chapter14)
+
+
+
+
+
+### **3.2 限流**
+
+在Spring Cloud Gateway中，有Filter过滤器，因此可以在“pre”类型的Filter中自行实现上述三种过滤器。但是限流作为网关最基本的功能，Spring Cloud Gateway官方就提供了RequestRateLimiterGatewayFilterFactory这个类，适用Redis和lua脚本实现了令牌桶的方式。
+
+#### **3.2.1 引入依赖和redis的reactive依赖**
+
+1.&lt;dependency&gt;
+
+2.&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+
+3.&lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt;
+
+4.&lt;/dependency&gt;
+
+5.
+
+6.&lt;dependency&gt;
+
+7.&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+
+8.&lt;artifatId&gt;spring-boot-starter-data-redis-reactive&lt;/artifactId&gt;
+
+9.&lt;/dependency&gt;
+
+#### **3.2.2 修改配置文件**
+
+1.server:
+
+2.port:8081
+
+3.spring:
+
+4.cloud:
+
+5.gateway:
+
+6.routes:
+
+7.-id:limit\_route
+
+8.uri:http://httpbin.org:80/get
+
+9.predicates:
+
+10.-After=2017-01-20T17:42:47.789-07:00\[America/Denver\]
+
+11.filters:
+
+12.-name:RequestRateLimiter
+
+13.args:
+
+14.key-resolver:'\#{@hostAddrKeyResolver}'
+
+15.redis-rate-limiter.replenishRate:1
+
+16.redis-rate-limiter.burstCapacity:3
+
+17.application:
+
+18.name:gateway-limiter
+
+19.redis:
+
+20.host:localhost
+
+21.port:6379
+
+22.database:0
+
+在上面的配置文件，指定程序的端口为8081，配置了 redis的信息，并配置了RequestRateLimiter的限流过滤器，该过滤器需要配置三个参数：
+
+lburstCapacity，令牌桶总容量。
+
+lreplenishRate，令牌桶每秒填充平均速率。
+
+lkey-resolver，用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据\#{@beanName}从 Spring 容器中获取 Bean 对象。
+
+#### **3.2.3 实现KeyResolver**
+
+根据Hostname进行限流，则需要用hostAddress去判断
+
+1.**publicclass**HostAddrKeyResolver**implements**KeyResolver{
+
+2.
+
+3.@Override
+
+4.**public**Mono&lt;String&gt;resolve\(ServerWebExchangeexchange\){
+
+5.**return**Mono.just\(exchange.getRequest\(\).getRemoteAddress\(\).getAddress\(\).getHostAddress\(\)\);
+
+6.}
+
+7.}
+
+8.@Bean
+
+9.**public**HostAddrKeyResolverhostAddrKeyResolver\(\){
+
+10.**returnnew**HostAddrKeyResolver\(\);
+
+11.}
+
+可以根据uri去限流，这时KeyResolver代码如下
+
+1.**publicclass**UriKeyResolver**implements**KeyResolver{
+
+2.
+
+3.@Override
+
+4.**public**Mono&lt;String&gt;resolve\(ServerWebExchangeexchange\){
+
+5.**return**Mono.just\(exchange.getRequest\(\).getURI\(\).getPath\(\)\);
+
+6.}
+
+7.
+
+8.}
+
+9.
+
+10.@Bean
+
+11.**public**UriKeyResolveruriKeyResolver\(\){
+
+12.**returnnew**UriKeyResolver\(\);
+
+13.}
+
+以用户的维度去限流：
+
+1.@Bean
+
+2.KeyResolveruserKeyResolver\(\){
+
+3.**return**exchange-&gt;Mono.just\(exchange.getRequest\(\).getQueryParams\(\).getFirst\("user"\)\);
+
+4.}
+
+#### **3.2.4 源码下载**
+
+[示例源码-GitHub](https://github.com/forezp/SpringCloudLearning/tree/master/sc-f-gateway-limiter)
+
+### **3.3 重试**
+
+RetryGatewayFilter 是 Spring Cloud Gateway 对请求重试提供的一个 GatewayFilter Factory。
+
+配置示例
+
+1.spring:
+
+2.cloud:
+
+3.gateway:
+
+4.routes:
+
+5.-id:retry\_test
+
+6.uri:lb://spring-cloud-producer
+
+7.predicates:
+
+8.-Path=/retry
+
+9.filters:
+
+10.-name:Retry
+
+11.args:
+
+12.retries:3
+
+13.statuses:BAD\_GATEWAY
+
+Retry GatewayFilter 通过这四个参数来控制重试机制： retries, statuses, methods, 和 series。
+
+lretries：重试次数，默认值是 3 次
+
+lstatuses：HTTP 的状态返回码，取值请参考：org.springframework.http.HttpStatus
+
+lmethods：指定哪些方法的请求需要进行重试逻辑，默认值是 GET 方法，取值参考：org.springframework.http.HttpMethod
+
+lseries：一些列的状态码配置，取值参考：org.springframework.http.HttpStatus.Series。符合的某段状态码才会进行重试逻辑，默认值是 SERVER\_ERROR，值是 5，也就是 5XX\(5 开头的状态码\)，共有5 个值。
+
+#### **源码下载**
+
+[示例代码-Github](https://github.com/meteor1993/SpringCloudLearning/tree/master/chapter14)
+
+
+
+@font-face{
+
+font-family:"Times New Roman";
+
+}
+
+
+
+@font-face{
+
+font-family:"宋体";
+
+}
+
+
+
+@font-face{
+
+font-family:"Wingdings";
+
+}
+
+
+
+@font-face{
+
+font-family:"Arial";
+
+}
+
+
+
+@font-face{
+
+font-family:"黑体";
+
+}
+
+
+
+@font-face{
+
+font-family:"Calibri";
+
+}
+
+
+
+@font-face{
+
+font-family:"Consolas";
+
+}
+
+
+
+@font-face{
+
+font-family:"Segoe UI";
+
+}
+
+
+
+@font-face{
+
+font-family:"微软雅黑";
+
+}
+
+
+
+@list l0:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l2:level1{
+
+mso-level-number-format:bullet;
+
+mso-level-suffix:tab;
+
+mso-level-text:"";
+
+mso-level-tab-stop:none;
+
+mso-level-number-position:left;
+
+margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}
+
+
+
+@list l3:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l5:level1{
+
+mso-level-number-format:bullet;
+
+mso-level-suffix:tab;
+
+mso-level-text:"";
+
+mso-level-tab-stop:none;
+
+mso-level-number-position:left;
+
+margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}
+
+
+
+@list l6:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+p.MsoNormal{
+
+mso-style-name:正文;
+
+mso-style-parent:"";
+
+margin:0pt;
+
+margin-bottom:.0001pt;
+
+mso-pagination:none;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-size:10.5000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h2{
+
+mso-style-name:"标题 2";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:13.0000pt;
+
+margin-bottom:13.0000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:2;
+
+line-height:172%;
+
+font-family:Arial;
+
+mso-fareast-font-family:黑体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:16.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h3{
+
+mso-style-name:"标题 3";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:13.0000pt;
+
+margin-bottom:13.0000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:3;
+
+line-height:172%;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:16.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h4{
+
+mso-style-name:"标题 4";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:14.0000pt;
+
+margin-bottom:14.5000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:4;
+
+line-height:155%;
+
+font-family:Arial;
+
+mso-fareast-font-family:黑体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:14.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+span.10{
+
+font-family:'Times New Roman';
+
+}
+
+
+
+span.15{
+
+font-family:'Times New Roman';
+
+color:rgb\(0,0,255\);
+
+text-decoration:underline;
+
+text-underline:single;
+
+}
+
+
+
+span.16{
+
+font-family:'Times New Roman';
+
+color:rgb\(128,0,128\);
+
+text-decoration:underline;
+
+text-underline:single;
+
+}
+
+
+
+p.p{
+
+mso-style-name:"普通\\(网站\\)";
+
+margin-top:5.0000pt;
+
+margin-right:0.0000pt;
+
+margin-bottom:5.0000pt;
+
+margin-left:0.0000pt;
+
+mso-margin-top-alt:auto;
+
+mso-margin-bottom-alt:auto;
+
+mso-pagination:none;
+
+text-align:left;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-size:12.0000pt;
+
+}
+
+
+
+span.msoIns{
+
+mso-style-type:export-only;
+
+mso-style-name:"";
+
+text-decoration:underline;
+
+text-underline:single;
+
+color:blue;
+
+}
+
+
+
+span.msoDel{
+
+mso-style-type:export-only;
+
+mso-style-name:"";
+
+text-decoration:line-through;
+
+color:red;
+
+}
+
+@page{mso-page-border-surround-header:no;
+
+	mso-page-border-surround-footer:no;}@page Section0{
+
+}
+
 div.Section0{page:Section0;}
 
 ## **3.高级应用**
@@ -1324,1938 +2421,1672 @@ lseries：一些列的状态码配置，取值参考：org.springframework.http.
 
 [示例代码-Github](https://github.com/meteor1993/SpringCloudLearning/tree/master/chapter14)
 
-  
-@font-face{  
-font-family:"Times New Roman";  
-}  
-  
-@font-face{  
-font-family:"宋体";  
-}  
-  
-@font-face{  
-font-family:"Wingdings";  
-}  
-  
-@font-face{  
-font-family:"Arial";  
-}  
-  
-@font-face{  
-font-family:"黑体";  
-}  
-  
-@font-face{  
-font-family:"Calibri";  
-}  
-  
-@font-face{  
-font-family:"Consolas";  
-}  
-  
-@font-face{  
-font-family:"Segoe UI";  
-}  
-  
-@font-face{  
-font-family:"微软雅黑";  
-}  
-  
-@list l0:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l2:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l3:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l5:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l6:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-p.MsoNormal{  
-mso-style-name:正文;  
-mso-style-parent:"";  
-margin:0pt;  
-margin-bottom:.0001pt;  
-mso-pagination:none;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:10.5000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h2{  
-mso-style-name:"标题 2";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:2;  
-line-height:172%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h3{  
-mso-style-name:"标题 3";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:3;  
-line-height:172%;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h4{  
-mso-style-name:"标题 4";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:14.0000pt;  
-margin-bottom:14.5000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:4;  
-line-height:155%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:14.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-span.10{  
-font-family:'Times New Roman';  
-}  
-  
-span.15{  
-font-family:'Times New Roman';  
-color:rgb\(0,0,255\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-span.16{  
-font-family:'Times New Roman';  
-color:rgb\(128,0,128\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-p.p{  
-mso-style-name:"普通\\(网站\\)";  
-margin-top:5.0000pt;  
-margin-right:0.0000pt;  
-margin-bottom:5.0000pt;  
-margin-left:0.0000pt;  
-mso-margin-top-alt:auto;  
-mso-margin-bottom-alt:auto;  
-mso-pagination:none;  
-text-align:left;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:12.0000pt;  
-}  
-  
-span.msoIns{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:underline;  
-text-underline:single;  
-color:blue;  
-}  
-  
-span.msoDel{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:line-through;  
-color:red;  
-}  
-@page{mso-page-border-surround-header:no;  
-	mso-page-border-surround-footer:no;}@page Section0{  
-}  
-div.Section0{page:Section0;}
-
-## **3.高级应用**
-
-### **3.1 熔断**
-
-1.Spring Cloud Gateway 也可以利用 Hystrix 的熔断特性，在流量过大时进行服务降级，同样我们还是首先给项目添加上依赖。
-
-1.&lt;dependency&gt;
-
-2.&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-
-3.&lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;
-
-4.&lt;/dependency&gt;
-
-配置示例
-
-1.spring:
-
-2.cloud:
-
-3.gateway:
-
-4.routes:
-
-5.-id:hystrix\_route
-
-6.uri:http://example.org
-
-7.filters:
-
-8.-Hystrix=myCommandName
-
-配置后，gateway 将使用 myCommandName 作为名称生成 HystrixCommand 对象来进行熔断管理。
-
-2.如果想添加熔断后的回调内容，需要在添加一些配置
-
-1.spring:
-
-2.cloud:
-
-3.gateway:
-
-4.routes:
-
-5.-id:hystrix\_route
-
-6.uri:lb://spring-cloud-producer
-
-7.predicates:
-
-8.-Path=/consumingserviceendpoint
-
-9.filters:
-
-10.-name:Hystrix
-
-11.args:
-
-12.name:fallbackcmd
-
-13.fallbackUri:forward:/incaseoffailureusethis
-
-fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的路径，当调用 Hystrix 的 fallback 被调用时，请求将转发到/incaseoffailureuset这个 URI。
-
-#### **源码下载**
-
-[示例代码-Github](https://github.com/meteor1993/SpringCloudLearning/tree/master/chapter14)
-
-
-
-
-
-### **3.2 限流**
-
-在Spring Cloud Gateway中，有Filter过滤器，因此可以在“pre”类型的Filter中自行实现上述三种过滤器。但是限流作为网关最基本的功能，Spring Cloud Gateway官方就提供了RequestRateLimiterGatewayFilterFactory这个类，适用Redis和lua脚本实现了令牌桶的方式。
-
-#### **3.2.1 引入依赖和redis的reactive依赖**
-
-1.&lt;dependency&gt;
-
-2.&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-
-3.&lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt;
-
-4.&lt;/dependency&gt;
-
-5.
-
-6.&lt;dependency&gt;
-
-7.&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-
-8.&lt;artifatId&gt;spring-boot-starter-data-redis-reactive&lt;/artifactId&gt;
-
-9.&lt;/dependency&gt;
-
-#### **3.2.2 修改配置文件**
-
-1.server:
-
-2.port:8081
-
-3.spring:
-
-4.cloud:
-
-5.gateway:
-
-6.routes:
-
-7.-id:limit\_route
-
-8.uri:http://httpbin.org:80/get
-
-9.predicates:
-
-10.-After=2017-01-20T17:42:47.789-07:00\[America/Denver\]
-
-11.filters:
-
-12.-name:RequestRateLimiter
-
-13.args:
-
-14.key-resolver:'\#{@hostAddrKeyResolver}'
-
-15.redis-rate-limiter.replenishRate:1
-
-16.redis-rate-limiter.burstCapacity:3
-
-17.application:
-
-18.name:gateway-limiter
-
-19.redis:
-
-20.host:localhost
-
-21.port:6379
-
-22.database:0
-
-在上面的配置文件，指定程序的端口为8081，配置了 redis的信息，并配置了RequestRateLimiter的限流过滤器，该过滤器需要配置三个参数：
-
-lburstCapacity，令牌桶总容量。
-
-lreplenishRate，令牌桶每秒填充平均速率。
-
-lkey-resolver，用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据\#{@beanName}从 Spring 容器中获取 Bean 对象。
-
-#### **3.2.3 实现KeyResolver**
-
-根据Hostname进行限流，则需要用hostAddress去判断
-
-1.**publicclass**HostAddrKeyResolver**implements**KeyResolver{
-
-2.
-
-3.@Override
-
-4.**public**Mono&lt;String&gt;resolve\(ServerWebExchangeexchange\){
-
-5.**return**Mono.just\(exchange.getRequest\(\).getRemoteAddress\(\).getAddress\(\).getHostAddress\(\)\);
-
-6.}
-
-7.}
-
-8.@Bean
-
-9.**public**HostAddrKeyResolverhostAddrKeyResolver\(\){
-
-10.**returnnew**HostAddrKeyResolver\(\);
-
-11.}
-
-可以根据uri去限流，这时KeyResolver代码如下
-
-1.**publicclass**UriKeyResolver**implements**KeyResolver{
-
-2.
-
-3.@Override
-
-4.**public**Mono&lt;String&gt;resolve\(ServerWebExchangeexchange\){
-
-5.**return**Mono.just\(exchange.getRequest\(\).getURI\(\).getPath\(\)\);
-
-6.}
-
-7.
-
-8.}
-
-9.
-
-10.@Bean
-
-11.**public**UriKeyResolveruriKeyResolver\(\){
-
-12.**returnnew**UriKeyResolver\(\);
-
-13.}
-
-以用户的维度去限流：
-
-1.@Bean
-
-2.KeyResolveruserKeyResolver\(\){
-
-3.**return**exchange-&gt;Mono.just\(exchange.getRequest\(\).getQueryParams\(\).getFirst\("user"\)\);
-
-4.}
-
-#### **3.2.4 源码下载**
-
-[示例源码-GitHub](https://github.com/forezp/SpringCloudLearning/tree/master/sc-f-gateway-limiter)
-
-### **3.3 重试**
-
-RetryGatewayFilter 是 Spring Cloud Gateway 对请求重试提供的一个 GatewayFilter Factory。
-
-配置示例
-
-1.spring:
-
-2.cloud:
-
-3.gateway:
-
-4.routes:
-
-5.-id:retry\_test
-
-6.uri:lb://spring-cloud-producer
-
-7.predicates:
-
-8.-Path=/retry
-
-9.filters:
-
-10.-name:Retry
-
-11.args:
-
-12.retries:3
-
-13.statuses:BAD\_GATEWAY
-
-Retry GatewayFilter 通过这四个参数来控制重试机制： retries, statuses, methods, 和 series。
-
-lretries：重试次数，默认值是 3 次
-
-lstatuses：HTTP 的状态返回码，取值请参考：org.springframework.http.HttpStatus
-
-lmethods：指定哪些方法的请求需要进行重试逻辑，默认值是 GET 方法，取值参考：org.springframework.http.HttpMethod
-
-lseries：一些列的状态码配置，取值参考：org.springframework.http.HttpStatus.Series。符合的某段状态码才会进行重试逻辑，默认值是 SERVER\_ERROR，值是 5，也就是 5XX\(5 开头的状态码\)，共有5 个值。
-
-#### **源码下载**
-
-[示例代码-Github](https://github.com/meteor1993/SpringCloudLearning/tree/master/chapter14)
-
-  
-@font-face{  
-font-family:"Times New Roman";  
-}  
-  
-@font-face{  
-font-family:"宋体";  
-}  
-  
-@font-face{  
-font-family:"Wingdings";  
-}  
-  
-@font-face{  
-font-family:"Arial";  
-}  
-  
-@font-face{  
-font-family:"黑体";  
-}  
-  
-@font-face{  
-font-family:"Calibri";  
-}  
-  
-@font-face{  
-font-family:"Consolas";  
-}  
-  
-@font-face{  
-font-family:"Segoe UI";  
-}  
-  
-@font-face{  
-font-family:"微软雅黑";  
-}  
-  
-@list l0:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l0:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l1:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l2:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l3:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l3:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l4:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l5:level1{  
-mso-level-number-format:bullet;  
-mso-level-suffix:tab;  
-mso-level-text:"";  
-mso-level-tab-stop:none;  
-mso-level-number-position:left;  
-margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}  
-  
-@list l6:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l6:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l7:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l8:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l9:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level1{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%1.";  
-mso-level-tab-stop:36.0000pt;  
-mso-level-number-position:left;  
-margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level2{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%2.";  
-mso-level-tab-stop:72.0000pt;  
-mso-level-number-position:left;  
-margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level3{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%3.";  
-mso-level-tab-stop:108.0000pt;  
-mso-level-number-position:left;  
-margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level4{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%4.";  
-mso-level-tab-stop:125.8500pt;  
-mso-level-number-position:left;  
-margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level5{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%5.";  
-mso-level-tab-stop:161.9000pt;  
-mso-level-number-position:left;  
-margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level6{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%6.";  
-mso-level-tab-stop:197.9000pt;  
-mso-level-number-position:left;  
-margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level7{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%7.";  
-mso-level-tab-stop:233.9000pt;  
-mso-level-number-position:left;  
-margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level8{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%8.";  
-mso-level-tab-stop:269.9000pt;  
-mso-level-number-position:left;  
-margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-@list l10:level9{  
-mso-level-number-format:decimal;  
-mso-level-suffix:tab;  
-mso-level-text:"%9.";  
-mso-level-tab-stop:305.9000pt;  
-mso-level-number-position:left;  
-margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}  
-  
-p.MsoNormal{  
-mso-style-name:正文;  
-mso-style-parent:"";  
-margin:0pt;  
-margin-bottom:.0001pt;  
-mso-pagination:none;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:10.5000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h2{  
-mso-style-name:"标题 2";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:2;  
-line-height:172%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h3{  
-mso-style-name:"标题 3";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:13.0000pt;  
-margin-bottom:13.0000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:3;  
-line-height:172%;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:16.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-h4{  
-mso-style-name:"标题 4";  
-mso-style-noshow:yes;  
-mso-style-next:正文;  
-margin-top:14.0000pt;  
-margin-bottom:14.5000pt;  
-mso-para-margin-top:0.0000gd;  
-mso-para-margin-bottom:0.0000gd;  
-page-break-after:avoid;  
-mso-pagination:lines-together;  
-text-align:justify;  
-text-justify:inter-ideograph;  
-mso-outline-level:4;  
-line-height:155%;  
-font-family:Arial;  
-mso-fareast-font-family:黑体;  
-mso-bidi-font-family:'Times New Roman';  
-font-weight:bold;  
-font-size:14.0000pt;  
-mso-font-kerning:1.0000pt;  
-}  
-  
-span.10{  
-font-family:'Times New Roman';  
-}  
-  
-span.15{  
-font-family:'Times New Roman';  
-color:rgb\(0,0,255\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-span.16{  
-font-family:'Times New Roman';  
-color:rgb\(128,0,128\);  
-text-decoration:underline;  
-text-underline:single;  
-}  
-  
-p.p{  
-mso-style-name:"普通\\(网站\\)";  
-margin-top:5.0000pt;  
-margin-right:0.0000pt;  
-margin-bottom:5.0000pt;  
-margin-left:0.0000pt;  
-mso-margin-top-alt:auto;  
-mso-margin-bottom-alt:auto;  
-mso-pagination:none;  
-text-align:left;  
-font-family:Calibri;  
-mso-fareast-font-family:宋体;  
-mso-bidi-font-family:'Times New Roman';  
-font-size:12.0000pt;  
-}  
-  
-span.msoIns{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:underline;  
-text-underline:single;  
-color:blue;  
-}  
-  
-span.msoDel{  
-mso-style-type:export-only;  
-mso-style-name:"";  
-text-decoration:line-through;  
-color:red;  
-}  
-@page{mso-page-border-surround-header:no;  
-	mso-page-border-surround-footer:no;}@page Section0{  
-}  
+
+
+@font-face{
+
+font-family:"Times New Roman";
+
+}
+
+
+
+@font-face{
+
+font-family:"宋体";
+
+}
+
+
+
+@font-face{
+
+font-family:"Wingdings";
+
+}
+
+
+
+@font-face{
+
+font-family:"Arial";
+
+}
+
+
+
+@font-face{
+
+font-family:"黑体";
+
+}
+
+
+
+@font-face{
+
+font-family:"Calibri";
+
+}
+
+
+
+@font-face{
+
+font-family:"Consolas";
+
+}
+
+
+
+@font-face{
+
+font-family:"Segoe UI";
+
+}
+
+
+
+@font-face{
+
+font-family:"微软雅黑";
+
+}
+
+
+
+@list l0:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l0:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l1:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l2:level1{
+
+mso-level-number-format:bullet;
+
+mso-level-suffix:tab;
+
+mso-level-text:"";
+
+mso-level-tab-stop:none;
+
+mso-level-number-position:left;
+
+margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}
+
+
+
+@list l3:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l3:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l4:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l5:level1{
+
+mso-level-number-format:bullet;
+
+mso-level-suffix:tab;
+
+mso-level-text:"";
+
+mso-level-tab-stop:none;
+
+mso-level-number-position:left;
+
+margin-left:21.0000pt;text-indent:-21.0000pt;font-family:Wingdings;}
+
+
+
+@list l6:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l6:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l7:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l8:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l9:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level1{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%1.";
+
+mso-level-tab-stop:36.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:36.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level2{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%2.";
+
+mso-level-tab-stop:72.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:72.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level3{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%3.";
+
+mso-level-tab-stop:108.0000pt;
+
+mso-level-number-position:left;
+
+margin-left:108.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level4{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%4.";
+
+mso-level-tab-stop:125.8500pt;
+
+mso-level-number-position:left;
+
+margin-left:144.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level5{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%5.";
+
+mso-level-tab-stop:161.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:180.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level6{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%6.";
+
+mso-level-tab-stop:197.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:216.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level7{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%7.";
+
+mso-level-tab-stop:233.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:252.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level8{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%8.";
+
+mso-level-tab-stop:269.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:288.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+@list l10:level9{
+
+mso-level-number-format:decimal;
+
+mso-level-suffix:tab;
+
+mso-level-text:"%9.";
+
+mso-level-tab-stop:305.9000pt;
+
+mso-level-number-position:left;
+
+margin-left:324.0000pt;text-indent:-18.0000pt;font-family:'Times New Roman';font-size:12.0000pt;}
+
+
+
+p.MsoNormal{
+
+mso-style-name:正文;
+
+mso-style-parent:"";
+
+margin:0pt;
+
+margin-bottom:.0001pt;
+
+mso-pagination:none;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-size:10.5000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h2{
+
+mso-style-name:"标题 2";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:13.0000pt;
+
+margin-bottom:13.0000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:2;
+
+line-height:172%;
+
+font-family:Arial;
+
+mso-fareast-font-family:黑体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:16.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h3{
+
+mso-style-name:"标题 3";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:13.0000pt;
+
+margin-bottom:13.0000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:3;
+
+line-height:172%;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:16.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+h4{
+
+mso-style-name:"标题 4";
+
+mso-style-noshow:yes;
+
+mso-style-next:正文;
+
+margin-top:14.0000pt;
+
+margin-bottom:14.5000pt;
+
+mso-para-margin-top:0.0000gd;
+
+mso-para-margin-bottom:0.0000gd;
+
+page-break-after:avoid;
+
+mso-pagination:lines-together;
+
+text-align:justify;
+
+text-justify:inter-ideograph;
+
+mso-outline-level:4;
+
+line-height:155%;
+
+font-family:Arial;
+
+mso-fareast-font-family:黑体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-weight:bold;
+
+font-size:14.0000pt;
+
+mso-font-kerning:1.0000pt;
+
+}
+
+
+
+span.10{
+
+font-family:'Times New Roman';
+
+}
+
+
+
+span.15{
+
+font-family:'Times New Roman';
+
+color:rgb\(0,0,255\);
+
+text-decoration:underline;
+
+text-underline:single;
+
+}
+
+
+
+span.16{
+
+font-family:'Times New Roman';
+
+color:rgb\(128,0,128\);
+
+text-decoration:underline;
+
+text-underline:single;
+
+}
+
+
+
+p.p{
+
+mso-style-name:"普通\\(网站\\)";
+
+margin-top:5.0000pt;
+
+margin-right:0.0000pt;
+
+margin-bottom:5.0000pt;
+
+margin-left:0.0000pt;
+
+mso-margin-top-alt:auto;
+
+mso-margin-bottom-alt:auto;
+
+mso-pagination:none;
+
+text-align:left;
+
+font-family:Calibri;
+
+mso-fareast-font-family:宋体;
+
+mso-bidi-font-family:'Times New Roman';
+
+font-size:12.0000pt;
+
+}
+
+
+
+span.msoIns{
+
+mso-style-type:export-only;
+
+mso-style-name:"";
+
+text-decoration:underline;
+
+text-underline:single;
+
+color:blue;
+
+}
+
+
+
+span.msoDel{
+
+mso-style-type:export-only;
+
+mso-style-name:"";
+
+text-decoration:line-through;
+
+color:red;
+
+}
+
+@page{mso-page-border-surround-header:no;
+
+	mso-page-border-surround-footer:no;}@page Section0{
+
+}
+
 div.Section0{page:Section0;}
 
 ## **3.高级应用**
