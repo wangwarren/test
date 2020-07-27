@@ -1,27 +1,27 @@
-## \*3.高级应用\*\*
+## 3.高级应用
 
 ### **3.1 熔断**
 
 1.Spring Cloud Gateway 也可以利用 Hystrix 的熔断特性，在流量过大时进行服务降级，同样我们还是首先给项目添加上依赖。
 
 ```
-1.<dependency>  
-2.  <groupId>org.springframework.cloud</groupId>  
-3.  <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>  
-4.</dependency>  
+1.<dependency>  
+2.  <groupId>org.springframework.cloud</groupId>  
+3.  <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>  
+4.</dependency>
 ```
 
 配置示例
 
 ```
-1.spring:  
-2.  cloud:  
-3.    gateway:  
-4.      routes:  
-5.      - id: hystrix_route  
-6.        uri: http://example.org  
-7.        filters:  
-        - Hystrix=myCommandName  
+1.spring:  
+2.  cloud:  
+3.    gateway:  
+4.      routes:  
+5.      - id: hystrix_route  
+6.        uri: http://example.org  
+7.        filters:  
+        - Hystrix=myCommandName
 ```
 
 配置后，gateway 将使用 myCommandName 作为名称生成 HystrixCommand 对象来进行熔断管理。
@@ -29,19 +29,19 @@
 2.如果想添加熔断后的回调内容，需要在添加一些配置
 
 ```
-1.spring:  
-2.  cloud:  
-3.    gateway:  
-4.      routes:  
-5.      - id: hystrix_route  
-6.        uri: lb://spring-cloud-producer  
-7.        predicates:  
-8.        - Path=/consumingserviceendpoint  
-9.        filters:  
-10.        - name: Hystrix  
-11.          args:  
-12.            name: fallbackcmd  
-            fallbackUri: forward:/incaseoffailureusethis 
+1.spring:  
+2.  cloud:  
+3.    gateway:  
+4.      routes:  
+5.      - id: hystrix_route  
+6.        uri: lb://spring-cloud-producer  
+7.        predicates:  
+8.        - Path=/consumingserviceendpoint  
+9.        filters:  
+10.        - name: Hystrix  
+11.          args:  
+12.            name: fallbackcmd  
+            fallbackUri: forward:/incaseoffailureusethis
 ```
 
 fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的路径，当调用 Hystrix 的 fallback 被调用时，请求将转发到/incaseoffailureuset这个 URI。
@@ -57,42 +57,42 @@ fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的�
 #### **3.2.1 引入依赖和redis的reactive依赖**
 
 ```
-1.<dependency>  
-2.    <groupId>org.springframework.cloud</groupId>  
-3.    <artifactId>spring-cloud-starter-gateway</artifactId>  
-4.</dependency>  
-5.  
-6.<dependency>  
-7.    <groupId>org.springframework.boot</groupId>  
-8.    <artifatId>spring-boot-starter-data-redis-reactive</artifactId>  
-9.</dependency>  
+1.<dependency>  
+2.    <groupId>org.springframework.cloud</groupId>  
+3.    <artifactId>spring-cloud-starter-gateway</artifactId>  
+4.</dependency>  
+5.  
+6.<dependency>  
+7.    <groupId>org.springframework.boot</groupId>  
+8.    <artifatId>spring-boot-starter-data-redis-reactive</artifactId>  
+9.</dependency>
 ```
 
 #### **3.2.2 修改配置文件**
 
 ```
-1.server:  
-2.  port: 8081  
-3.spring:  
-4.  cloud:  
-5.    gateway:  
-6.      routes:  
-7.      - id: limit_route  
-8.        uri: http://httpbin.org:80/get  
-9.        predicates:  
-10.        - After=2017-01-20T17:42:47.789-07:00[America/Denver]  
-11.        filters:  
-12.        - name: RequestRateLimiter  
-13.          args:  
-14.            key-resolver: '#{@hostAddrKeyResolver}'
-15.            redis-rate-limiter.replenishRate: 1  
-16.            redis-rate-limiter.burstCapacity: 3  
-17.  application:  
-18.    name: gateway-limiter  
-19.  redis:  
-20.    host: localhost  
-21.    port: 6379  
-    database: 0    
+1.server:  
+2.  port: 8081  
+3.spring:  
+4.  cloud:  
+5.    gateway:  
+6.      routes:  
+7.      - id: limit_route  
+8.        uri: http://httpbin.org:80/get  
+9.        predicates:  
+10.        - After=2017-01-20T17:42:47.789-07:00[America/Denver]  
+11.        filters:  
+12.        - name: RequestRateLimiter  
+13.          args:  
+14.            key-resolver: '#{@hostAddrKeyResolver}'
+15.            redis-rate-limiter.replenishRate: 1  
+16.            redis-rate-limiter.burstCapacity: 3  
+17.  application:  
+18.    name: gateway-limiter  
+19.  redis:  
+20.    host: localhost  
+21.    port: 6379  
+    database: 0
 ```
 
 在上面的配置文件，指定程序的端口为8081，配置了 redis的信息，并配置了RequestRateLimiter的限流过滤器，该过滤器需要配置三个参数：
@@ -108,44 +108,43 @@ fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的�
 根据Hostname进行限流，则需要用hostAddress去判断
 
 ```
-1.public class HostAddrKeyResolver implements KeyResolver {  
-2.  
-3.    @Override  
-4.    public Mono<String> resolve(ServerWebExchange exchange) {  
-5.        return Mono.just(exchange.getRequest().getRemoteAddress().getAddress().getHostAddress());  
-6.    }   
-7.}    
-8. @Bean  
-9.    public HostAddrKeyResolver hostAddrKeyResolver() {  
-10.        return new HostAddrKeyResolver();  
-11.    }  
+1.public class HostAddrKeyResolver implements KeyResolver {  
+2.  
+3.    @Override  
+4.    public Mono<String> resolve(ServerWebExchange exchange) {  
+5.        return Mono.just(exchange.getRequest().getRemoteAddress().getAddress().getHostAddress());  
+6.    }   
+7.}    
+8. @Bean  
+9.    public HostAddrKeyResolver hostAddrKeyResolver() {  
+10.        return new HostAddrKeyResolver();  
+11.    }
 ```
 
 可以根据uri去限流，这时KeyResolver代码如下
 
 ```
-1.public class UriKeyResolver  implements KeyResolver {  
-2.  
-3.    @Override  
-4.    public Mono<String> resolve(ServerWebExchange exchange) {  
-5.        return Mono.just(exchange.getRequest().getURI().getPath());  
-6.    }  
-7.  
-8.}  
-9.  
-10. @Bean  
-11. public UriKeyResolver uriKeyResolver() {  
-12.     return new UriKeyResolver();  
- 
+1.public class UriKeyResolver  implements KeyResolver {  
+2.  
+3.    @Override  
+4.    public Mono<String> resolve(ServerWebExchange exchange) {  
+5.        return Mono.just(exchange.getRequest().getURI().getPath());  
+6.    }  
+7.  
+8.}  
+9.  
+10. @Bean  
+11. public UriKeyResolver uriKeyResolver() {  
+12.     return new UriKeyResolver();
 ```
 
 以用户的维度去限流：
 
 ```
-1.@Bean  
-2.KeyResolver userKeyResolver() {  
-3.   return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("user"));  
-}  
+1.@Bean  
+2.KeyResolver userKeyResolver() {  
+3.   return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("user"));  
+}
 ```
 
 #### **3.2.4 源码下载**
@@ -159,19 +158,19 @@ RetryGatewayFilter 是 Spring Cloud Gateway 对请求重试提供的一个 Gatew
 配置示例
 
 ```
-1.spring:  
-2.  cloud:  
-3.    gateway:  
-4.      routes:  
-5.      - id: retry_test  
-6.        uri: lb://spring-cloud-producer  
-7.        predicates:  
-8.        - Path=/retry  
-9.        filters:  
-10.        - name: Retry  
-11.          args:  
-12.            retries: 3  
-13.            statuses: BAD_GATEWAY 
+1.spring:  
+2.  cloud:  
+3.    gateway:  
+4.      routes:  
+5.      - id: retry_test  
+6.        uri: lb://spring-cloud-producer  
+7.        predicates:  
+8.        - Path=/retry  
+9.        filters:  
+10.        - name: Retry  
+11.          args:  
+12.            retries: 3  
+13.            statuses: BAD_GATEWAY
 ```
 
 * retries：重试次数，默认值是 3 次
