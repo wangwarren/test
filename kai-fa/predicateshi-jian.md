@@ -1,4 +1,18 @@
-## 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [**1.1 通过时间匹配**](#11-%E9%80%9A%E8%BF%87%E6%97%B6%E9%97%B4%E5%8C%B9%E9%85%8D)
+  - [**1.2 通过Cookie匹配**](#12-%E9%80%9A%E8%BF%87cookie%E5%8C%B9%E9%85%8D)
+  - [**1.3 通过Header属性匹配**](#13-%E9%80%9A%E8%BF%87header%E5%B1%9E%E6%80%A7%E5%8C%B9%E9%85%8D)
+  - [**1.4 通过Host匹配**](#14-%E9%80%9A%E8%BF%87host%E5%8C%B9%E9%85%8D)
+  - [**1.5 通过请求方式匹配**](#15-%E9%80%9A%E8%BF%87%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%8C%B9%E9%85%8D)
+  - [**1.6 通过请求路径匹配**](#16-%E9%80%9A%E8%BF%87%E8%AF%B7%E6%B1%82%E8%B7%AF%E5%BE%84%E5%8C%B9%E9%85%8D)
+  - [**1.7 通过请求参数匹配**](#17-%E9%80%9A%E8%BF%87%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E5%8C%B9%E9%85%8D)
+  - [**1.8 通过请求ip地址进行匹配**](#18-%E9%80%9A%E8%BF%87%E8%AF%B7%E6%B1%82ip%E5%9C%B0%E5%9D%80%E8%BF%9B%E8%A1%8C%E5%8C%B9%E9%85%8D)
+  - [**1.9 组合使用**](#19-%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8)
+  - [**1.10 源码下载**](#110-%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## **1.1 通过时间匹配**
 
@@ -20,7 +34,7 @@
 13.            - After=2019-01-01T00:00:00+08:00[Asia/Shanghai]
 ```
 
-上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址[https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。](https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。)
+上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。
 
 配置：
 
@@ -220,19 +234,19 @@ curl http://localhost:8080
 配置：
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - Query=smile  
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - Query=smile
 ```
 
 这样配置，只要请求中包含 smile 属性的参数即可匹配路由。
@@ -240,7 +254,7 @@ curl http://localhost:8080
 使用 curl 测试，命令行输入:
 
 ```
-curl localhost:8080?smile=x&id=2 
+curl localhost:8080?smile=x&id=2
 ```
 
 经过测试发现只要请求汇总带有 smile 参数即会匹配路由，不带 smile 参数则不会匹配。
@@ -248,19 +262,19 @@ curl localhost:8080?smile=x&id=2 
 还可以将 Query 的值以键值对的方式进行配置，这样在请求过来时会对属性值和正则进行匹配，匹配上才会走路由。
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - Query=keep, pu.  
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - Query=keep, pu.
 ```
 
 这样只要当请求中包含 keep 属性并且参数值是以 pu 开头的长度为三位的字符串才会进行匹配和路由。
@@ -268,7 +282,7 @@ curl localhost:8080?smile=x&id=2 
 使用 curl 测试，命令行输入:
 
 ```
-curl localhost:8080?keep=pub
+curl localhost:8080?keep=pub
 ```
 
 测试可以返回页面代码，将 keep 的属性值改为 pubx 再次访问就会报 404,证明路由需要匹配正则表达式才会进行路由。
@@ -278,25 +292,25 @@ curl localhost:8080?keep=pub
 配置：
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - RemoteAddr=192.168.1.1/24  
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - RemoteAddr=192.168.1.1/24
 ```
 
 可以将此地址设置为本机的 ip 地址进行测试。
 
 ```
-curl localhost:8080 
+curl localhost:8080
 ```
 
 如果请求的远程地址是 192.168.1.10，则此路由将匹配。
@@ -304,27 +318,26 @@ curl localhost:8080 
 ### **1.9 组合使用**
 
 ```
-1.server:  
-2.  port: 8080  
-3.spring:  
-4.  application:  
-5.    name: api-gateway  
-6.  cloud:  
-7.    gateway:  
-8.      routes:  
-9.        - id: gateway-service  
-10.          uri: https://www.baidu.com  
-11.          order: 0  
-12.          predicates:  
-13.            - Host=**.foo.org  
-14.            - Path=/headers  
-15.            - Method=GET  
-16.            - Header=X-Request-Id, \d+  
-17.            - Query=foo, ba.  
-18.            - Query=baz  
-19.            - Cookie=chocolate, ch.p  
-20.            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]  
-
+1.server:  
+2.  port: 8080  
+3.spring:  
+4.  application:  
+5.    name: api-gateway  
+6.  cloud:  
+7.    gateway:  
+8.      routes:  
+9.        - id: gateway-service  
+10.          uri: https://www.baidu.com  
+11.          order: 0  
+12.          predicates:  
+13.            - Host=**.foo.org  
+14.            - Path=/headers  
+15.            - Method=GET  
+16.            - Header=X-Request-Id, \d+  
+17.            - Query=foo, ba.  
+18.            - Query=baz  
+19.            - Cookie=chocolate, ch.p  
+20.            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
 
 ### **1.10 源码下载**
