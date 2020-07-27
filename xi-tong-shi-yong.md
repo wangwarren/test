@@ -40,9 +40,9 @@ Spring Cloud Gateway 是使用 netty+webflux 实现因此不需要再引入 web 
 * uri：目标服务地址
 * predicates：路由条件，Predicate 接受一个输入参数，返回一个布尔值结果。该接口包含多种默认方法来将 Predicate 组合成其他复杂的逻辑（比如：与，或，非）。
 
-上面这段配置的意思是，配置了一个 id 为 gateway-service 的路由规则，当访问地址http://localhost:8080/meteor\_93时会自动转发到地址：
+上面这段配置的意思是，配置了一个 id 为 gateway-service 的路由规则，当访问地址[http://localhost:8080/meteor\_93时会自动转发到地址：](http://localhost:8080/meteor_93时会自动转发到地址：)
 
-http://localhost:8080/meteor\_93。
+[http://localhost:8080/meteor\_93。](http://localhost:8080/meteor_93。)
 
 ## **4.3 另一种路由配置方式**
 
