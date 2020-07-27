@@ -1,14 +1,9 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 - [1.**流程**](#1%E6%B5%81%E7%A8%8B)
 - [2.**核心组件介绍**](#2%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D)
   - [2**.1 Predicate介绍**](#21-predicate%E4%BB%8B%E7%BB%8D)
   - [2**.2 Filter介绍**](#22-filter%E4%BB%8B%E7%BB%8D)
     - [2**.2.1 作用**](#221-%E4%BD%9C%E7%94%A8)
     - [2**.2.2 生命周期**](#222-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 
 
