@@ -18,7 +18,7 @@
 13.            - After=2019-01-01T00:00:00+08:00[Asia/Shanghai]
 ```
 
-上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址[https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。](https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。)
+上面的示例是指，请求时间在 2019年1月1日0点0分0秒之后的所有请求都转发到地址https://blog.csdn.net。+08:00是指时间和UTC时间相差八个小时，时间地区为Asia/Shanghai。
 
 配置：
 
