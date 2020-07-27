@@ -9,4 +9,5 @@
     * [开发](kai-fa.md)
       * [Predicate实践](kai-fa/predicateshi-jian.md)
       * [Filter](kai-fa/filter.md)
+        * [高级应用](kai-fa/filter/gao-ji-ying-yong.md)
 
